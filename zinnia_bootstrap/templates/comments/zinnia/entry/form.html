@@ -12,7 +12,7 @@
     {% for field in form %}
     {% if field.is_hidden %}{{ field }}{% else %}
     {% if user.email and field.name in "namemailurl" %}{% else %}
-    <div{% if field.errors %} class="alert alert-error"{% endif %}{% ifequal field.name "honeypot" %} style="display:none;"{% endifequal %}>
+    <div{% if field.errors %} class="alert alert-error"{% endif %}{% if field.name == "honeypot" %} style="display:none;"{% endif %}>
       {% if field.errors %}{{ field.errors }}{% endif %}
       <div class="form-group">
         <label for="{{ field.id_for_label }}" class="col-lg-2 control-label">{{ field.label }}</label>

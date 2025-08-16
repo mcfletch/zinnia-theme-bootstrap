@@ -9,13 +9,13 @@
     {% endif %}
 
     {% for page_number in begin %}
-    <li class="page {% ifequal page.number page_number %}active{% endifequal %}">
-      {% ifequal page.number page_number %}
+    <li class="page {% if page.number == page_number %}active{% endif %}">
+      {% if page.number == page_number %}
       <a href="#">{{ page_number }}</a>
       {% else %}
       <a href="?page={{ page_number }}{{ GET_string }}"
          title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
-      {% endifequal%}
+      {% endif%}
     </li>
     {% endfor %}
 
@@ -24,13 +24,13 @@
       <a href="#">&hellip;</a>
     </li>
     {% for page_number in middle %}
-    <li class="page {% ifequal page.number page_number %}active{% endifequal %}">
-      {% ifequal page.number page_number %}
+    <li class="page {% if page.number == page_number %}active{% endif %}">
+      {% if page.number == page_number %}
       <a href="#">{{ page_number }}</a>
       {% else %}
       <a href="?page={{ page_number }}{{ GET_string }}"
          title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
-      {% endifequal%}
+      {% endif%}
     </li>
     {% endfor %}
     {% endif %}
@@ -40,13 +40,13 @@
       <a href="#">&hellip;</a>
     </li>
     {% for page_number in end %}
-    <li class="page {% ifequal page.number page_number %}active{% endifequal %}">
-      {% ifequal page.number page_number %}
+    <li class="page {% if page.number == page_number %}active{% endif %}">
+      {% if page.number == page_number %}
       <a href="#">{{ page_number }}</a>
       {% else %}
       <a href="?page={{ page_number }}{{ GET_string }}"
          title="{% trans "Entries page" %} {{ page_number }}">{{ page_number }}</a>
-      {% endifequal%}
+      {% endif%}
     </li>
     {% endfor %}
     {% endif %}
